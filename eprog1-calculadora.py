@@ -12,7 +12,7 @@ def ep(n1, n2):
 def rq(n1):
     print("o resultado é", math.sqrt(n1))
 def inv(n1):
-    print("o resultado é", )
+    print("o resultado é", 1/n1)
 
 print("bem-vindo à calculadora da eletiva de programação!")
 
