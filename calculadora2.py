@@ -6,9 +6,13 @@ def instxt(num):
     calculo=calculo + num
     texto.delete(1.0, "end")
     texto.insert(1.0,calculo)
+def avaliar():
+    global calculo
+    a=str(eval (calculo))
+    calculo=str()
+    instxt(a)
 
 janela = tk.Tk()
-
 
 texto=tk.Text(janela,height=2, width=23, font=("arial", 36))
 texto.grid(columnspan=8)
@@ -41,13 +45,13 @@ mais=tk.Button(janela, text="+", command=lambda:instxt("+"), height=2, width=4, 
 mais.grid(column=4, row=2)
 menos=tk.Button(janela, text="-", command=lambda:instxt("-"), height=2, width=4, font=("arial", 36))
 menos.grid(column=4, row=3)
-vezes=tk.Button(janela, text="X", command=lambda:instxt("X"), height=2, width=4, font=("arial", 36))
+vezes=tk.Button(janela, text="*", command=lambda:instxt("*"), height=2, width=4, font=("arial", 36))
 vezes.grid(column=4, row=4)
 divid=tk.Button(janela, text="/", command=lambda:instxt("/"), height=2, width=4, font=("arial", 36))
 divid.grid(column=4, row=5)
-igual=tk.Button(janela, text="=", command=lambda:instxt("="), height=2, width=10, font=("arial", 36))
-igual.grid(column=1, row=6, columnspan=2)
-clear=tk.Button(janela, text="C", command=lambda:instxt("C"), height=2, width=10, font=("arial", 36))
-clear.grid(column=3, row=6, columnspan=2)
+igual=tk.Button(janela, text="=", command=lambda:avaliar(), height=2, width=10, font=("arial", 36))
+igual.grid(column=3, row=6, columnspan=2)
+clear=tk.Button(janela, text="C", command=lambda:texto.delete(1.0, "end"), height=2, width=10, font=("arial", 36))
+clear.grid(column=1, row=6, columnspan=2)
 
 janela.mainloop()
