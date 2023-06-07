@@ -2,6 +2,7 @@
     #Potencia
     #Raiz
     #1/x
+#versao2 07/06/23: mudei o tamanho/lugar dos botoes
 
 import tkinter as tk
 import math
@@ -55,7 +56,7 @@ janela=tk.Tk()
 #janela.geometry("400x400")
 
 texto=tk.Text(janela,height=4, width=26,font=("Arial",24))
-texto.grid(columnspan=5)
+texto.grid(columnspan=7)
 
 botao1=tk.Button(janela, text="1",command=lambda:inserir_texto("1"),width=13, height=4,font=("Arial",12))
 botao1.grid(column=1,row=2)
@@ -115,10 +116,10 @@ botao_umdivx=tk.Button(janela, text="1/x",command=lambda:inverse(),width=13, hei
 botao_umdivx.grid(column=5,row=4)
 
 botao_igual=tk.Button(janela, text="=",command=lambda:avaliar(),width=27, height=4,font=("Arial",12))
-botao_igual.grid(column=1,row=6,columnspan=2)
+botao_igual.grid(column=2,row=6,columnspan=3)
 
-botao_C=tk.Button(janela, text="C",command=lambda:apagar(),width=27, height=4,font=("Arial",12))
-botao_C.grid(column=3,row=6,columnspan=2)
+botao_C=tk.Button(janela, text="C",command=lambda:apagar(),width=13, height=4,font=("Arial",12))
+botao_C.grid(column=5,row=5)
 
 
 janela.mainloop()
